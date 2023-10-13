@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&display=swap');
+
+:root {
+  --black: 20, 18, 25;
+  --white: 220, 215, 230;
+
+  --bg-primary: var(--black);
+  --fg-primary: var(--white);
+  --fg-secondary: 200, 195, 210;
+
+}
+
+html, body {
+  background-color: rgb(var(--bg-primary));
+  color: rgb(var(--fg-primary));
+}
+
+a:link, a:visited {
+  color: rgb(var(--fg-secondary));
+  text-decoration: none;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Noto Serif Display', serif;
+}
+
+a:hover {
+  color: rgb(var(--fg-primary));
+  font-weight: 500;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
