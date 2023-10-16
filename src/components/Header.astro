@@ -19,10 +19,10 @@ import { SITE_TITLE } from '../consts';
 let title = document.getElementById("site-title")
 let emblem = document.getElementById("site-emblem")
 document.addEventListener("scroll", ()=> {
-  if (window.scrollY <= 10) {
+  if (window.scrollY <= 20) {
     title.classList.remove("show-title")
     emblem.classList.remove("shrink-emblem")
-  } else if (window.scrollY > 10) {
+  } else if (window.scrollY > 20) {
     title.classList.add("show-title")
     emblem.classList.add("shrink-emblem")
   }

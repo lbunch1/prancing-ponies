@@ -69,11 +69,10 @@ img {
 }
 
 .spacer {
-  margin-bottom: 92vw;
+  margin-bottom: min(92vw, 620px);
 }
 
-.site-title,
-.site-emblem {
+.site-title {
   display: flex;
   position: fixed;
   left: 0;
@@ -90,13 +89,17 @@ img {
 }
 
 .site-emblem {
+  position: fixed;
+  top: 0;
+  left: max(calc(50vw - 300px), calc(5vw - 1rem));
+  padding: .5rem;
   transition: all linear 0.3s;
 }
 
 .site-emblem > img {
-  max-width: 90vw;
+  width: 90vw;
+  max-width: 600px;
   transition: all linear 0.3s;
-  padding: .5rem;
 }
 
 .show-title {
@@ -108,7 +111,7 @@ img {
 }
 
 .shrink-emblem {
-  justify-content: left;
+  left: 0;
 }
 
 @media screen and (max-width: 750px) {
