@@ -5,41 +5,35 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
+  <div id="site-title" class="site-title">
+    <h2>{SITE_TITLE}</h2>
+  </div>
+  <div id="site-emblem" class="site-emblem">
+    <img src="prancing_ponies.png" />
+  </div>
+  <div class="spacer"></div>
 	<nav>
-		<h2><a id="site-title" href="/"><img class="header-logo " id="header-logo" src="Prancing_Ponies.png" /></a></h2>
-    <h2 class="hidden-title">{SITE_TITLE}</h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
 	</nav>
 </header>
 <script>
+let title = document.getElementById("site-title")
+let emblem = document.getElementById("site-emblem")
 document.addEventListener("scroll", ()=> {
-  if (window.scrollY === 0) {
-    document.getElementById("header-logo").classList.remove("scroll-v")
-    document.querySelector(".hidden-title").classList.remove("display-title")
-  } else if (window.scrollY > 0) {
-    document.getElementById("header-logo").classList.add("scroll-v")
-    document.querySelector(".hidden-title").classList.add("display-title")
+  if (window.scrollY <= 10) {
+    title.classList.remove("show-title")
+    emblem.classList.remove("shrink-emblem")
+  } else if (window.scrollY > 10) {
+    title.classList.add("show-title")
+    emblem.classList.add("shrink-emblem")
   }
 })
 </script>
 <style>
-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgb(var(--bg-primary));
-  margin-bottom: 20vw;
-}
 
 nav {
   display: flex;
   justify-content: space-between;
   padding-inline: 1rem;
-  min-height: 6rem;
 }
 
 .internal-links {
