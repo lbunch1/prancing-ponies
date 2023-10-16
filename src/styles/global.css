@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bokor&family=New+Rocker&family=Pirata+One&family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bokor&family=Young+Serif&family=New+Rocker&family=Pirata+One&family=UnifrakturMaguntia&display=swap');
 
 :root {
   --black: 20, 20, 25;
@@ -17,6 +17,7 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Young Serif', sans-serif;
 }
 
 a:link, a:visited {
@@ -35,7 +36,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'UnifrakturMaguntia', serif;
+  font-family: 'Bokor', serif;
+  max-width: 40rem;
+  padding-inline: 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin: 0;
 }
 
 main {
@@ -49,7 +57,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-inline: 2rem;
+  min-width: 100%;
   margin: 0;
   text-align: center;
 }
