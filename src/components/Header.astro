@@ -27,6 +27,13 @@ document.addEventListener("scroll", ()=> {
     emblem.classList.add("shrink-emblem")
   }
 })
+
+window.addEventListener("onLoad", ()=>{
+  if (window.scrolly > 20) {
+    title.classList.add("show-title")
+    emblem.classList.add("shrink-emblem")
+  }
+})
 </script>
 <style>
 

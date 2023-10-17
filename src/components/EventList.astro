@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('events')).filter((e)=>e.data.published=== true).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+---
+
+<ul>
+  {
+    posts.map((post) => (
+      <li>
+        <a href={`/events/${post.slug}/`}>
+          <h3 class="title">{post.data.title}</h3>
+          <p class="date">
+            <FormattedDate date={new Date(post.data.pubDate)} />
+          </p>
+          <p>
+            {post.data.description}
+          </p>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+<hr />
+
+<style>
+ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+a:link, a:visited {
+color: rgb(var(--bg-primary));
+}
+
+a:hover {
+color: rgb(var(--fg-secondary));
+}
+
+h3, p {
+  margin-block: .2rem;
+}
+
+hr {
+border-top: solid 4px rgb(var(--fg-secondary));
+width: 20rem;
+}
+</style>
