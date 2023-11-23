@@ -1,68 +1,38 @@
-# Astro Starter Kit: Blog
+# Prancing Ponies - A Band Website
 
-```sh
-npm create astro@latest -- --template blog
+This is a simple site meant to feature a cover band named **Prancing Ponies**.
+
+This site is built with [Astro.build](https://astro.build). Please read the official docs for info on the framework.
+
+## Install
+
+To run this site locally, you must have an instance of node v18 or higher. Clone this repo and from the repo's top level directory, run:
+
+```bash
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+and to run a local developmental server:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```bash
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+You may then visit the site at [localhost:4321](http://localhost:4321)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Add/Edit Events
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+To add or edit an event, navigate to `events` directory.
 
-Any static assets, like images, can be placed in the `public/` directory.
+```
+|--Prancing-Ponies
+|  |--src
+|  |  |--content
+|  |  |  |--events
+```
 
-## 🧞 Commands
+Simply duplicate one of the markdown files to ensure all the necessary frontmatter is present. Replace the data for each field and set `published` to `true` to ensure that the event will be visible on the home page. Toggle `published` to `false` to remove the listing from the home page without deleting it. The event will still be accessible via its relevant url.
 
-All commands are run from the root of the project, from a terminal:
+Be mindful naming the event file, as the name of the event will be (minus the '.md') will be the url path. eg `no-events.md` is reachable at [localhost:4321/events/no-events](#).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Event files must either be of file type `.md` or `.mdx`.
